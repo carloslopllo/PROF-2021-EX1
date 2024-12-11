@@ -24,10 +24,9 @@ pipeline {
             }
         }
 
-        stage('JaCoCo Coverage') {
+        stage('Verify') {
             steps {
-                sh 'mvn jacoco:prepare-agent test jacoco:report'
-                sh 'mvn jacoco:check'
+                sh 'mvn clean install test verify'
             }
         }
     }
