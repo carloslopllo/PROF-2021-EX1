@@ -49,4 +49,38 @@ public class LibraryTest {
 		});
 	}
 
+	@Test
+	public void removeBookA() {
+		Book b1 = new Book("a");
+		try {
+			l.addBook(b1);
+		} catch (DuplicatedBookException e) {
+			e.printStackTrace();
+		}
+
+		l.removeBook(b1);
+
+		assertThrows(EmptyLibraryException.class, () -> {
+			l.getBook("a");
+		});
+	}
+
+	@Test
+	public void removeBookB() {
+		Book b1 = new Book("a");
+		Book b2 = new Book("b");
+		try {
+			l.addBook(b1);
+			l.addBook(b2);
+		} catch (DuplicatedBookException e) {
+			e.printStackTrace();
+		}
+
+		l.removeBook(b1);
+
+		assertThrows(NonExistingBookException.class, () -> {
+			l.getBook("a");
+		});
+	}
+
 }
