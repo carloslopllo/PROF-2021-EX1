@@ -12,4 +12,15 @@
   <description>Proyecto para la realización del control 1</description>
   <url>https://github.com/GRISE-UPM/PROF-2021-EX1</url>
 
+  <dependencies>
+    <!-- JUnit for testing -->
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.11.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
 </project>
